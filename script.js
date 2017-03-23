@@ -1,5 +1,6 @@
 $('#get-another-quote-button').on('click', function() {
   randomQuote();
+  randomColor();
 });
 
   function randomQuote() {
@@ -12,4 +13,21 @@ $('#get-another-quote-button').on('click', function() {
         $(".quote-author").html(response.quoteAuthor);
 }
 })
+};
+
+
+var min = 1;
+var max= 255;
+
+function getRandomNumber() {
+  return Math.floor( Math.random() * max) + min;
+}
+
+function randomColor() {
+  var numberone = getRandomNumber();
+  var numbertwo = getRandomNumber();
+  var numberthree =getRandomNumber();
+  var randomColor = 'rgb('+ numberone + ',' + numbertwo + ',' + numberthree +')';
+  $('body').css("background-color", randomColor);
+  $('.color').css("color", randomColor);
 };
