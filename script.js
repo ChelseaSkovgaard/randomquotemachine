@@ -1,3 +1,8 @@
+$( document ).ready(function() {
+  randomQuote();
+  randomColor();
+});
+
 $('#get-another-quote-button').on('click', function() {
   randomQuote();
   randomColor();
@@ -28,6 +33,7 @@ function randomColor() {
   var numbertwo = getRandomNumber();
   var numberthree =getRandomNumber();
   var randomColor = 'rgb('+ numberone + ',' + numbertwo + ',' + numberthree +')';
-  $('body').css("background-color", randomColor);
+  
   $('.color').css("color", randomColor);
+  $('.background-color').css("background-color", randomColor)
 };
